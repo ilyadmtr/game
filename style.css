@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Catamaran', sans-serif;
+}
+body{
+    background: cadetblue;
+    padding: 50px 0;
+}
+.wrapper{
+    margin: auto;
+    width: 90%;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+}
+.header{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.header:before{
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: black;
+}
+button{
+    background: darkred;
+    cursor: pointer;
+    color: white;
+    font-size: 17px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+button:hover{
+    background: cadetblue;
+
+}
+.header h1{
+    font-size: 25px;
+}
+
+.cards{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+.card{
+    width: 18%;
+    height: 300px;
+    font-size: 100px;
+    margin-bottom: 30px;
+    background-color: transparent;
+    perspective: 1000px;
+}
+.box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+}
+.clicked .box-inner {
+    transform: rotateY(0deg) !important;
+}
+.win-card .box-inner{
+    transition: opacity 0.5s;
+    transform: rotateY(0deg) !important;
+    opacity: 0.5;
+}
+.box-front, .box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+.box-front {
+    background: darkorange;
+    color: #111111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-back {
+    background: url("./unnamed.jpg") no-repeat;
+    transform: rotateY(180deg);
+}
